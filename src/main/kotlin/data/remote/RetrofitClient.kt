@@ -15,7 +15,7 @@ class RetrofitClient {
 
     }
 
-    fun getResponseApi(retrofit: Retrofit) : ZscoreApi {
+    fun getResponseApi(retrofit: Retrofit): ZscoreApi {
         return retrofit.create(ZscoreApi::class.java)
     }
 }
