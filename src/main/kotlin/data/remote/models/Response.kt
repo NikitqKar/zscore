@@ -1,3 +1,3 @@
 package data.remote.models
 
-class Response : ArrayList<ResponseSubList>()
+typealias Response = List<List<Double>>
