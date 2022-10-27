@@ -1,4 +1,5 @@
-package jsonresponse
+package data.remote
+
 
 import com.github.kotlintelegrambot.Bot
 import com.github.kotlintelegrambot.bot
@@ -8,16 +9,17 @@ import com.github.kotlintelegrambot.dispatcher.command
 import com.github.kotlintelegrambot.dispatcher.text
 import com.github.kotlintelegrambot.entities.ChatId
 import com.github.kotlintelegrambot.logging.LogLevel
+import data.remote.repository.ZscoreRepository
 
 private const val BOT_ANSWER_TIMEOUT = 30
 private const val BOT_TOKEN = "5771800742:AAEcur8bzN-mJyqcvnU6PjEA2C9ejO-Hl40"
 
-class ZscoreBot(private val repository: Repository) {
+class ZscoreBot(private val repository: ZscoreRepository) {
 
     private var _cahtId : ChatId? = null
     private val cahtId by lazy {    requireNotNull(_cahtId)}
 
-    fun createBot() : Bot{
+    fun createBot() : Bot {
         return bot {
             timeout= BOT_ANSWER_TIMEOUT
             token = BOT_TOKEN
